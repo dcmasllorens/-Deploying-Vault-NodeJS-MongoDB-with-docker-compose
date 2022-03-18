@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  vault:
+    image: vault:1.9.4
+    hostname: dockervault
+    ports:
+      - 8200:8200
+    volumes:
+      - ./vault/data:/vault/data
+      - ./vault/logs:/vault/logs
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: ${VAULT_DEV_ROOT_TOKEN_ID}
+      VAULT_DEV_LISTEN_ADDRESS: '0.0.0.0:8200'
+    cap_add:
+      - IPC_LOCK
+    container_name: vault_dev
+    command:
+      - server -config=/vault/config/vault-config.json
+    entrypoint: "vault server -dev"
+  mongo:
+    image: mongo:4.2
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+  nodejs:
+    build: .
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 3001:3001
+    environment:
+      MONGODB_USER: ${MONGODB_USER}
+      MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+      MONGODB_HOST: ${MONGODB_HOST}
+      MONGODB_PORT: ${MONGODB_PORT}
+      MONGODB_DATABASE: ${MONGODB_DATABASE}
+      MONGODB_ENV: ${MONGODB_ENV}
+      JWT_SECRET: ${JWT_SECRET}
