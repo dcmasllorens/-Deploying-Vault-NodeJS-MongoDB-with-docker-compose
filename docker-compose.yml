@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
     env_file: .env
     ports:
-      - 3001:3001
+      - 3000:3000
     environment:
       MONGODB_USER: ${MONGODB_USER}
       MONGODB_PASSWORD: ${MONGODB_PASSWORD}
