@@ -1,6 +1,6 @@
 # Deploying-Vault-NodeJS-MongoDB-with-docker-compose
 
-In this repository, we will know how to deploy NodeJS MongoDB and Vault with Docker-Compose, this repo is related with [this one](https://github.com/Cybersecurity-Montilivi/Using-ExpressJS-with-Docker-MongoDB) because the image downloads the node js api repo and after starts. 
+In this repository, we will know how to deploy NodeJS MongoDB and Vault with Docker-Compose, this repo is related with [this one](https://github.com/Cybersecurity-Montilivi/Using-ExpressJS-with-Docker-MongoDB) because the image downloads the node JS API repo and after starts. 
 
 ### Starting services
 
