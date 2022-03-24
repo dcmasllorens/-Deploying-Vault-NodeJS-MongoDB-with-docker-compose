@@ -2,6 +2,8 @@
 
 In this repository, we will know how to deploy NodeJS MongoDB and Vault with Docker-Compose, this repo is related with [this one](https://github.com/Cybersecurity-Montilivi/Using-ExpressJS-with-Docker-MongoDB) because the image downloads the node JS API repo and after starts. 
 
+The target of this repo is start a demo for how to start a docker-compose with some services, we are deploying the VAULT in DEV mode, that means you can't deploy this vault in PRODUCTION. If you w'ant to deploy the Vault in PROD you need to configure TLS, certificates, how to unseal automatically when you start the service and more configurations.
+
 ### Starting services
 
 For starting the all containers on background, we will use this command, for view the all logs of containers we will use the command without the parameter -d.
