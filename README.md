@@ -16,20 +16,9 @@ docker-compose up -d
 
 Here we have an example of .env, this file is so important to configure, we will put this file in the same directory as **docker-compose.yml**, 
 
-The NodeJS API need the MONGODB_ENV= , because if you put PROD the API will build a string connection for connect to MongoDBAtlas, and if you put PRE the NodeJS API will construct a string for connect to local docker MongoDB.
-
 ~~~
-MONGODB_USER=
-MONGODB_PASSWORD=
-MONGODB_HOST=
-MONGODB_PORT=
-MONGODB_DATABASE=
-MONGODB_ENV=
-
 MONGO_INITDB_ROOT_USERNAME=
 MONGO_INITDB_ROOT_PASSWORD=
-
-JWT_SECRET=
 ~~~
 
 ### Configuring MongoDB user
